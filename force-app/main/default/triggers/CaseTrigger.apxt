@@ -1,6 +1,6 @@
 Trigger CaseTrigger on Case(before insert,before update){
 for(Case caseRec:Trigger.new){
-    if(caseRec.Type='Escalation'){
+    if(caseRec.Type!=null&&caseRec.Type='Escalation'){
         caseRec.priority='High';
     }
 }
